@@ -1,0 +1,27 @@
+{
+  "name": "@tetris/game",
+  "version": "0.1.0",
+  "description": "俄罗斯方块 Web 游戏(Vite + Phaser 4)",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tetris/core": "workspace:*",
+    "@tetris/ui": "workspace:*",
+    "phaser": "^4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^7.3.6"
+  }
+}

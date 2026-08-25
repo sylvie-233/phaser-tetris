@@ -1,0 +1,27 @@
+{
+  "name": "@tetris/mobile",
+  "version": "0.1.0",
+  "description": "俄罗斯方块 Capacitor 移动壳(Android)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "cap:add:android": "npm run build && cap add android",
+    "cap:sync": "npm run build && cap sync android",
+    "cap:open:android": "cap open android",
+    "cap:run:android": "npm run build && cap run android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
+    "@tetris/game": "workspace:*"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.0",
+    "@types/node": "^26.3.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.6"
+  }
+}
