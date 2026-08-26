@@ -150,6 +150,10 @@ export class GameScene extends Scene {
   // ---------- 输入 ----------
 
   private createControls(): void {
+    // 场景重启时会复用实例, 必须清空上一局的按钮引用(旧对象已被 Phaser 销毁)
+    this.controls = [];
+    this.buttons.clear();
+
     // 动作在 create 时挂到引擎实例上
     const actions: Record<string, () => void> = {
       left: () => this.engine.moveLeft(),
@@ -247,10 +251,7 @@ export class GameScene extends Scene {
   // ---------- 暂停 ----------
 
   private createPauseOverlay(): void {
-    this.overlayDim = this.add
-      .rectangle(0, 0, 1, 1, 0x000000, 0.65)
-      .setOrigin(0, 0)
-      .setDepth(40);
+    this.overlayDim = this.add.rectangle(0, 0, 1, 1, 0x000000, 0.65).setOrigin(0, 0).setDepth(40);
 
     this.overlayTitle = this.add
       .text(0, 0, '已暂停', {
